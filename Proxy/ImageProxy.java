@@ -1,5 +1,6 @@
 package Proxy;
 
+//proxy
 public class ImageProxy implements Image{
     private String filename;
     private HighResImage realImage;
@@ -8,11 +9,13 @@ public class ImageProxy implements Image{
         this.filename = filename;
     }
 
+    //displaying thumbnail without loading full page
     @Override
     public void display() {
         System.out.println("displaying thumbnail " + filename);
     }
 
+    //loading and displaying full-res image only when required
     @Override
     public void displayFullImage() {
         if (realImage == null) {
